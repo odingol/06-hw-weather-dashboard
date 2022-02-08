@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="style.css">
+
+
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+
+    <header>
+        <div class='header'>
+            <div class="jumbotron jumbotron-fluid header w-100 p-20">
+                <div class="container">
+                    <h1 class="display-4">Weather Dashboard</h1>
+                    <p class="lead">Explore below to view weather updates for the cities you love </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="align-section">
+            <div class='format-search'>
+                <h1>Search For A City:</h1>
+                <div class="search-box">
+                    <form>
+                        <input class="form-control" id="search-city" placeholder="Type to search..." name="search-city">
+                        <button type="submit" class="btn btn-primary mb-3" class="search-btn">Search</button>
+                    </form>
+                <div class=" page-break"></div>
+                    <div class="search-results">
+                        <button></button>
+                    </div>
+                </div>
+            </div>
+            <div class='format-conditions'>
+                <div class='city-title-date'>
+                    <h1></h1>
+                </div>
+                <ul class="position-list">
+                    <li class='temp'>Temp:</li>
+                    <li class='wind'>Wind:</li>
+                    <li class='humidity'>Humidity:</li>
+                    <li class='uv-index'>UV Index:</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class='format-forecast'>
+            <div>
+                <h1>5-day Forecast:</h1>
+                <div class='forecast'>
+
+                </div>
+            </div>
+            
+        </section>
+
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src='script.js'></script>
+</body>
+
+<script>
+    $(function () {
+        var availableTags = [
+            "Atlanta",
+            "Los Angeles",
+            "Chicago",
+            "Philadelphia",
+            "Dallas",
+            "Houston",
+            "Phoneix",
+            "Seattle",
+            "Detroit",
+            "Miami",
+            "Portland",
+            "Salt Lake City",
+            "Pittsburgh",
+            "San Diego",
+            "Cincinnati",
+            "Las Vegas",
+            "St. Louis",
+            "Austin",
+            "Oklahoma City",
+            "Honolulu",
+            "Spokane",
+            "Missoula",
+            "Indianapolis",
+            "Jacksonville",
+            "Tacoma",
+            "Redmond",
+        ];
+        $("#search-city").autocomplete({
+            source: availableTags
+        });
+    });
+</script>
+
+</html>
