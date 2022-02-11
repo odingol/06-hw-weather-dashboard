@@ -13,14 +13,17 @@ function weatherData() { //function weatherData should have "cityName" inside to
     
     .then(function(data) {
         console.log(data);
+        let weatherTitle = $('.title');
         let icon = data.weather[0].icon;
-        // $('weather-icon').classList('src=http://openweathermap.org/img/w/' + icon + '.png');
+        weatherIcon = $(`<img src="http://openweathermap.org/img/w/${icon}.png"/>`);
         let dateToday = new Date(data.dt * 1000).toLocaleDateString("en-US")
         $('.title').text(`${data.name} (${dateToday}) `);
-        $('.temp').text(`Temp: ${data.main.temp}℉`);
+        $('.temp').text(`Temp: ${data.main.temp} ℉`);
         $('.wind').text(`Wind: ${data.wind.speed} MPH`);
         $('.humidity').text(`Humidity: ${data.main.humidity} %`);
-        $('.uv-index').text(`UV Index:`)
+        $('.uv-index').text(`UV Index:`);
+        
+        weatherTitle.append(weatherIcon);
         
 
     })
