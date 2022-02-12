@@ -23,6 +23,26 @@ body {
     font-size: 30px;
 }
 
+.card {
+    margin: 30px;
+}
+
+.search-history {
+    margin-top: 50px;
+}
+
+.search-history button {
+    background-color: rgb(130, 184, 177);
+}
+
+.forecast {
+    margin-top:35px;
+}
+
+hr {
+    color: white;
+    border:1px solid;
+}
 
 
 
