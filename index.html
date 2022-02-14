@@ -32,95 +32,95 @@
 
     <main class="conainer-fluid p-5">
         <section class="row">
-            <div class="card text-dark bg-light bg-opacity-75 col-4">
-                <div class="card-header row">
-                    <h2>Search For A City:</h2>
-                </div>
-                <div class="card-body">
-                    <form class="row">
-                        <div class="col-9">
-                            <input class="form-control inputValue" id="search-city" placeholder="Type to search..."
-                                type="text">
+            <div class="col-4">
+                <div class="card text-dark bg-light bg-opacity-75 p-4">
+                    <div>
+                        <form>
+                            <label>
+                                <h2>Search For A City:</h2>
+                            </label>
+                            <div class="row">
+                                <div class="col-9">
+                                    <input class="form-control inputValue" id="search-city"
+                                        placeholder="Type to search..." type="text">
+                                </div>
+                                <div class="col-2">
+                                    <button type="submit" class="btn btn-primary" class="search-btn">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="search-history">
+                            <button type="button" class="btn btn-light btn-block">Search History</button>
                         </div>
-                        <div class="col-2">
-                            <button type="submit" class="btn btn-primary" class="search-btn">Search</button>
-                        </div>
-                    </form>
-                    <div class="search-history">
-                        <button type="button" class="btn btn-light btn-block">Search History</button>
                     </div>
                 </div>
             </div>
 
-            <div class='col-7'>
+            <div class="col-7 display-results">
                 <div class="card bg-light bg-opacity-75">
-                    <div class="card-header header1 row">
+                    <div class="card-header header1">
                         <h1 class="title"></h1>
                     </div>
                     <div class="card-body position-list">
-
                         <p class='temp'></p>
                         <p class='wind'></p>
                         <p class='humidity'></p>
                         <p class='uv-index'></p>
                     </div>
                 </div>
+
+                <div class="card card-header bg-light bg-opacity-75 forecast-card" style="max-width: 80rem">
+                    <h2>5-day Forecast:</h2>
+                </div>
+                <div class="row forecast-card">
+                    <div class="card bg-light bg-opacity-25" style="width: 9rem;">
+                        <h4 class="date1 text-light"></h4>
+                        <hr>
+                        <div class="card-body">
+                            <p class="temp-text1 text-light"></p>
+                            <p class="wind-text1 text-light"></p>
+                            <p class="humidity-text1 text-light"></p>
+                        </div>
+                    </div>
+                    <div class="card bg-light bg-opacity-25" style="width: 9rem;">
+                        <h4 class="date2 text-light"></h4>
+                        <hr>
+                        <div class="card-body">
+                            <p class="temp-text2 text-light"></p>
+                            <p class="wind-text2 text-light"></p>
+                            <p class="humidity-text2 text-light"></p>
+                        </div>
+                    </div>
+                    <div class="card bg-light bg-opacity-25" style="width: 9rem;">
+                        <h4 class="date3 text-light">Date</h4>
+                        <hr>
+                        <div class="card-body">
+                            <p class="temp-text3 text-light"></p>
+                            <p class="wind-text3 text-light"></p>
+                            <p class="humidity-text3 text-light"></p>
+                        </div>
+                    </div>
+                    <div class="card bg-light bg-opacity-25" style="width: 9rem;">
+                        <h4 class="date4 text-light">Date</h4>
+                        <hr>
+                        <div class="card-body">
+                            <p class="temp-text4 text-light"></p>
+                            <p class="wind-text4 text-light"></p>
+                            <p class="humidity-text4 text-light"></p>
+                        </div>
+                    </div>
+                    <div class="card bg-light bg-opacity-25" style="width: 9rem;">
+                        <h4 class="date5 text-light">Date</h4>
+                        <hr>
+                        <div class="card-body">
+                            <p class="temp-text5 text-light"></p>
+                            <p class="wind-text5 text-light"></p>
+                            <p class="humidity-text5 text-light"></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-
-
-        <section class="forecast row p-6">
-            <div class="card card-header bg-light bg-opacity-75" style="max-width: 80rem">
-                <h1>5-day Forecast:</h1>
-            </div>
-            <div class="card bg-light bg-opacity-25" style="width: 13rem;">
-                <h4 class="date1 text-light"></h4>
-                <hr>
-                <div class="card-body">
-                    <p class="temp-text1 text-light"></p>
-                    <p class="wind-text1 text-light"></p>
-                    <p class="humidity-text1 text-light"></p>
-                </div>
-            </div>
-            <div class="card bg-light bg-opacity-25" style="width: 13rem;">
-                <h4 class="date2 text-light"></h4>
-                <hr>
-                <div class="card-body">
-                    <p class="temp-text2 text-light"></p>
-                    <p class="wind-text2 text-light"></p>
-                    <p class="humidity-text2 text-light"></p>
-                </div>
-            </div>
-            <div class="card bg-light bg-opacity-25" style="width: 13rem;">
-                <h4 class="date3 text-light">Date</h4>
-                <hr>
-                <div class="card-body">
-                    <p class="temp-text3 text-light"></p>
-                    <p class="wind-text3 text-light"></p>
-                    <p class="humidity-text3 text-light"></p>
-                </div>
-            </div>
-            <div class="card bg-light bg-opacity-25" style="width: 13rem;">
-                <h4 class="date4 text-light">Date</h4>
-                <hr>
-                <div class="card-body">
-                    <p class="temp-text4 text-light"></p>
-                    <p class="wind-text4 text-light"></p>
-                    <p class="humidity-text4 text-light"></p>
-                </div>
-            </div>
-            <div class="card bg-light bg-opacity-25" style="width: 13rem;">
-                <h4 class="date5 text-light">Date</h4>
-                <hr>
-                <div class="card-body">
-                    <p class="temp-text5 text-light"></p>
-                    <p class="wind-text5 text-light"></p>
-                    <p class="humidity-text5 text-light"></p>
-                </div>
-            </div>
-        </section>
-
-        </div>
     </main>
 
 
