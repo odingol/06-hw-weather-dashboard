@@ -1,7 +1,7 @@
 var APIKey = "b34597290eeb30280f78fe35565b7c58";
 // var cityName = "Seattle"; //After the code completes get rid of this VARIABLE as it is already being called in the seach button
 
-
+var main = $('.display-results').hide()
 
 
 
@@ -14,14 +14,17 @@ function weatherResults(data) {
 
     // Color code for UV Index
     function classifyUV() {
-    if(data.current.uvi === 0) {
-        uvIndex.classList.add()
+        if(data.current.uvi <= 2) {
+            uvIndex.addClass("low-risk")
+        } else if(data.current.uvi <= 5) {
+            uvIndex.addClass("moderate-risk")
+        } else if(data.current.uvi > 5) {
+            uvIndex.addClass("high-risk");
+        }
+
     }
-
-}
-classifyUV();
-
-}
+   classifyUV();
+};
 
 
 
@@ -45,8 +48,9 @@ function weatherData(cityName) {
     
     // local storage of a the new city
     let pastCity = JSON.parse(localStorage.getItem("pastCity")) || [];
+    
     // pastCity.filter(data.name > 0);
-
+    
     if (!pastCity.includes(data.name)) {
         pastCity.push(data.name)
         localStorage.setItem("pastCity", JSON.stringify(pastCity));
@@ -99,11 +103,13 @@ function displayForecast(lat, lon) {
 function saveHistory(cityName) {
     let recentCity = $(`<button type="button" class="btn btn-light btn-block">${cityName}</button>`);
     recentCity.on("click", function() {
-  
-    weatherData(cityName) 
+        
+        weatherData(cityName) 
+
     });
 
     $('.search-history').append(recentCity);
+  
     
 };
 
@@ -131,6 +137,7 @@ var cityInput = $('#search-city').val().trim();
 
 weatherData(cityInput)
 saveHistory(cityInput)
+main = $('.display-results').show();
 
 })
 

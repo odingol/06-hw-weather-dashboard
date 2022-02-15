@@ -57,6 +57,23 @@ hr {
 }
 
 
+/* UV Index Color Risk Indicator */
+
+.low-risk {
+    background-color:rgb(138, 189, 138);
+    width:25%;
+}
+
+.moderate-risk {
+    background-color: yellow;
+    width:25%;
+}
+
+.high-risk {
+    background-color: red;
+    width:25%;
+}
+
 
 
 
