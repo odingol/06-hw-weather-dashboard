@@ -6,12 +6,21 @@ var APIKey = "b34597290eeb30280f78fe35565b7c58";
 
 
 function weatherResults(data) {
+    var uvIndex = $('.uv-index');
     $(".temp").text(`Temp: ${data.current.temp} ℉`);
     $(".wind").text(`Wind: ${data.current.wind_speed} MPH`);
     $(".humidity").text(`Humidity: ${data.current.humidity} %`);
-    $(".uv-index").text(`UV Index: ${data.current.uvi}`);
+   uvIndex.text(`UV Index: ${data.current.uvi}`);
 
     // Color code for UV Index
+    function classifyUV() {
+    if(data.current.uvi === 0) {
+        uvIndex.classList.add()
+    }
+
+}
+classifyUV();
+
 }
 
 
@@ -36,10 +45,13 @@ function weatherData(cityName) {
     
     // local storage of a the new city
     let pastCity = JSON.parse(localStorage.getItem("pastCity")) || [];
+    // pastCity.filter(data.name > 0);
+
     if (!pastCity.includes(data.name)) {
         pastCity.push(data.name)
         localStorage.setItem("pastCity", JSON.stringify(pastCity));
     }
+
 
     });
 }
@@ -60,14 +72,12 @@ function displayForecast(lat, lon) {
         
         
       for (var i = 1; i < 6; i++) {
-          let forecastDate = $(`.date${i}`);
-          let forecastTemp = $(`.temp-text${i}`);
+        let forecastDate = $(`.date${i}`);
+        let forecastTemp = $(`.temp-text${i}`);
         let forecastWind = $(`.wind-text${i}`);
         let forecastHumidity = $(`.humidity-text${i}`);
 
-        let dates = new Date(data.daily[i].dt * 1000).toLocaleDateString(
-          "en-US"
-        );
+        let dates = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
         let weatherIcon = data.daily[i].weather[0].icon;
         let forecastIcon = $(`<img src=http://openweathermap.org/img/w/${weatherIcon}.png class=card-img-top icon${i}>`);
 
@@ -89,9 +99,12 @@ function displayForecast(lat, lon) {
 function saveHistory(cityName) {
     let recentCity = $(`<button type="button" class="btn btn-light btn-block">${cityName}</button>`);
     recentCity.on("click", function() {
-        weatherData(cityName);
+  
+    weatherData(cityName) 
     });
+
     $('.search-history').append(recentCity);
+    
 };
 
 
@@ -108,14 +121,21 @@ retrieveHistory();
 
 
 $('#search-btn').on('click', function(event) {
-    
+
+// event delegation if(event.target.classList.contains('') {
+
+// })
+
 event.preventDefault();
 var cityInput = $('#search-city').val().trim();
 
-weatherData(cityInput);
-saveHistory(cityInput);
-
+weatherData(cityInput)
+saveHistory(cityInput)
 
 })
+
+
+
+
 
 
