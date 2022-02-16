@@ -46,14 +46,14 @@ function weatherData(cityName) {
       $(".title").text(`${cityName} (${dateToday}) `);
       $('.title').append(weatherIcon);
     
-    // local storage of a the new city
+    // local storage of the new city
     let pastCity = JSON.parse(localStorage.getItem("pastCity")) || [];
     
-    // pastCity.filter(data.name > 0);
-    
+
     if (!pastCity.includes(data.name)) {
         pastCity.push(data.name)
         localStorage.setItem("pastCity", JSON.stringify(pastCity));
+        saveHistory(data.name);
     }
 
 
@@ -61,7 +61,7 @@ function weatherData(cityName) {
 }
 
 
-
+// 5-Day Forecast
 
 function displayForecast(lat, lon) {
     var geoLocate = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${APIKey}`;
@@ -98,14 +98,11 @@ function displayForecast(lat, lon) {
 
 
 
-
-
 function saveHistory(cityName) {
     let recentCity = $(`<button type="button" class="btn btn-light btn-block">${cityName}</button>`);
     recentCity.on("click", function() {
         
-        weatherData(cityName) 
-
+        weatherData(cityName); 
     });
 
     $('.search-history').append(recentCity);
@@ -128,15 +125,11 @@ retrieveHistory();
 
 $('#search-btn').on('click', function(event) {
 
-// event delegation if(event.target.classList.contains('') {
-
-// })
-
 event.preventDefault();
 var cityInput = $('#search-city').val().trim();
 
 weatherData(cityInput)
-saveHistory(cityInput)
+
 main = $('.display-results').show();
 
 })
