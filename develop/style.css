@@ -61,17 +61,17 @@ hr {
 
 .low-risk {
     background-color:rgb(138, 189, 138);
-    width:15%;
+    width:25%;
 }
 
 .moderate-risk {
     background-color: yellow;
-    width:15%;
+    width:25%;
 }
 
 .high-risk {
     background-color: red;
-    width:15%;
+    width:25%;
 }
 
 
