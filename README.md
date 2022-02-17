@@ -14,13 +14,13 @@
 
 AS An aspiring web developer
 
-I WANT to create a weather application for users to see current and forecasted weather updates for multiple cities
+I WANT to create a weather application for users to see current and forecasted weather updates of multiple cities
 
 SO THAT users can access accurate weather updates for the cities they searched 
 
 <br>
 
-## Employer User Story
+## Client User Story
 
 <br>
 
@@ -68,7 +68,7 @@ The following animation demonstrates the application's functionality
 * When the user searches for a city they are presented with the current and future conditions for that city and that search gets added as a button in the search history section
 <br>
 
-* In the current weather card, the sections displays the name of the city, date, and the weather icon. Below the header section for the card lies the current temperature for that city, the wind speed, humidity, and the UV Index. 
+* In the current weather card, the section displays the name of the city, date, and the weather icon. Below the header section for the card lies the current temperature for that city, wind speed, humidity, and the UV Index. 
 <br>
 
 * In the forecast section there are 5 cards which displays the weather forecasted 4 days ahead of the current date. In each of the cards displays the predicted temperature, wind, and humidity. 
@@ -86,7 +86,7 @@ The following animation demonstrates the application's functionality
 
 ## External Links
 
-[Deployed Application]()
+[Deployed Application](https://odingol.github.io/06-hw-weather-dashboard/)
 
-[Git Hub Repository]()
+[Git Hub Repository](https://github.com/odingol/06-hw-weather-dashboard)
 
