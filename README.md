@@ -1,4 +1,4 @@
-# Weather-Dashboard
+# 06-HW-WEATHER-DASHBOARD
 
 ## My Task
 
