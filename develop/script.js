@@ -30,7 +30,7 @@ function weatherResults(data) {
 
 function weatherData(cityName) {
   //function weatherData should have "cityName" inside to later be changed using the search button listener (which is var cityInput)//
-  var requestURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${APIKey}`;
+  var requestURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${APIKey}`;
 
   fetch(requestURL)
     .then(function (response) {
@@ -41,7 +41,7 @@ function weatherData(cityName) {
       console.log(data);
       displayForecast(data.coord.lat, data.coord.lon);
       let icon = data.weather[0].icon;
-      let weatherIcon = $(`<img src="http://openweathermap.org/img/w/${icon}.png"/>`);
+      let weatherIcon = $(`<img src="https://openweathermap.org/img/w/${icon}.png"/>`);
       let dateToday = new Date(data.dt * 1000).toLocaleDateString("en-US");
       $(".title").text(`${cityName} (${dateToday}) `);
       $('.title').append(weatherIcon);
@@ -83,7 +83,7 @@ function displayForecast(lat, lon) {
 
         let dates = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
         let weatherIcon = data.daily[i].weather[0].icon;
-        let forecastIcon = $(`<img src=http://openweathermap.org/img/w/${weatherIcon}.png class=card-img-top icon${i}>`);
+        let forecastIcon = $(`<img src=https://openweathermap.org/img/w/${weatherIcon}.png class=card-img-top icon${i}>`);
 
         forecastDate.text(dates);
         forecastTemp.text(`Temp: ${data.daily[i].temp.day} ℉`);
