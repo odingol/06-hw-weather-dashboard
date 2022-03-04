@@ -1,29 +1,33 @@
 var APIKey = "b34597290eeb30280f78fe35565b7c58";
 // var cityName = "Seattle"; //After the code completes get rid of this VARIABLE as it is already being called in the seach button
 
-var main = $('.display-results').hide()
+var main = $('.display-results').hide();
+var uvIndex = $('.uv-index');
+
 
 
 
 function weatherResults(data) {
-    var uvIndex = $('.uv-index');
     $(".temp").text(`Temp: ${data.current.temp} ℉`);
     $(".wind").text(`Wind: ${data.current.wind_speed} MPH`);
     $(".humidity").text(`Humidity: ${data.current.humidity} %`);
-   uvIndex.text(`UV Index: ${data.current.uvi}`);
+    uvIndex.text(`UV Index: ${data.current.uvi}`);
+    
+    classifyUV(data);
+};
 
-    // Color code for UV Index
-    function classifyUV() {
-        if(data.current.uvi <= 2) {
-            uvIndex.addClass("low-risk")
-        } else if(data.current.uvi <= 5) {
-            uvIndex.addClass("moderate-risk")
-        } else if(data.current.uvi > 5) {
-            uvIndex.addClass("high-risk");
-        }
-
+// Color code for UV Index
+function classifyUV(data) {
+    uvIndex.removeClass("low-risk");
+    uvIndex.removeClass("moderate-risk");
+    uvIndex.removeClass("high-risk");
+    if(data.current.uvi <= 2) {
+        uvIndex.addClass("low-risk")
+    } else if(data.current.uvi <= 5) {
+        uvIndex.addClass("moderate-risk")
+    } else if(data.current.uvi > 5) {
+        uvIndex.addClass("high-risk");
     }
-   classifyUV();
 };
 
 
@@ -55,7 +59,6 @@ function weatherData(cityName) {
         localStorage.setItem("pastCity", JSON.stringify(pastCity));
         saveHistory(data.name);
     }
-
 
     });
 }
