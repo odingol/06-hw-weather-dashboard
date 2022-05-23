@@ -1,4 +1,4 @@
-# WEATHER-DASHBOARD
+# weather-dashboard
 
 ## My Task
 
