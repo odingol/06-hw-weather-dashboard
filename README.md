@@ -86,7 +86,7 @@ The following animation demonstrates the application's functionality
 
 ## External Links
 
-[Deployed Application](https://odingol.github.io/06-hw-weather-dashboard/)
+[Deployed Application](https://frabjous-tartufo-5698eb.netlify.app)
 
 [Git Hub Repository](https://github.com/odingol/06-hw-weather-dashboard)
 
